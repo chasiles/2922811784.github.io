@@ -1,0 +1,104 @@
+<html>
+<head>
+  <title>Chasile千洗里</title>
+  <style>
+    html,body{
+        background: #0EE;
+        color: white;
+        font-family: sans-serif;
+        text-align: center;
+    }
+    h1{
+        margin-top: 64px;
+    }
+    </style>
+</head>
+<body>
+  <h1>Chasile千洗里</h>
+  <h2>信息</h2>
+  <pre>qq:nope</pre>
+  <pre>discord:nope</pre>
+  <h1>官方信息</h1>
+  <pre>官网:<a href="">nope</a></pre>
+    <pre>discord group:nope</pre>
+</body>
+<style>
+        .tabs {
+            display: flex;
+            justify-content: space-between;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .tab {
+            padding: 10px;
+            background-color: blue;
+            border: 1px solid #ccc;
+            border-bottom: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .tab.active {
+            background-color: red;
+            border-bottom:red;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: #0EE;
+            border: 1px solid #ccc;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <ul class="tabs">
+        <li class="tab active" onclick="openTab(event, 'tab1')">later</li>
+        <li class="tab" onclick="openTab(event, 'tab2')">later</li>
+        <li class="tab" onclick="openTab(event, 'tab3')">later</li>
+    </ul>
+    <div id="tab1" class="tab-content active">
+        <p>later</p>
+    </div>
+    <div id="tab2" class="tab-content">
+        <p>later</p>
+    </div>
+    <div id="tab3" class="tab-content">
+        <p>later</p>
+    </div>
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+<select id="selectBox" onchange="redirectToPage()">
+		<option value="">which client's config do you need?</option>
+		<option value="/vape">vape</option>
+		<option value="/losebypass">losebypass</option>
+		<option value="/nlb">nlb</option>
+	</select>
+<button onclick="redirectToPage()">重新進入</button>
+
+	<script>
+		function redirectToPage() {
+			var selectBox = document.getElementById("selectBox");
+			var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+			if (selectedValue) {
+				if (confirm("您确定要跳转吗？")) {
+					window.location.href = selectedValue;
+				}
+			}
+		}
+	</script>
